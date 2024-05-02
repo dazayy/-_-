@@ -18,10 +18,12 @@ def taks1(n, m):
         if i == 1:
             break
 
-print("Введите два числа в одной строке:")
-n = int(input("Введите n: "))
-m = int(input("Введите m: "))
-taks1(n, m)
+if __name__ == "__main__":
+    print("Введите два числа в одной строке:")
+    n = int(input("Введите n: "))
+    m = int(input("Введите m: "))
+    taks1(n, m)
+
 
 
 
