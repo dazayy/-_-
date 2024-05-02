@@ -9,7 +9,7 @@ def get_min_step(arr):
     return int(step)
 
 def main():
-    # path = "task4/input.txt"
+    # path = "test_case/task4/input.txt"
 
     path = input("Введите путь до фалйла с данными: ")
     
