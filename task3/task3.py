@@ -41,9 +41,9 @@ def main():
     # report_path = "task3/report.json"
 
 
-    tests_path = input("Введиет путь до структуры данных: ")
-    values_path = input("Введите путь до фала со значениями: ")
-    report_path = input("Введите путь до отчета: ")
+    tests_path = input("Введиет путь до структуры данных: ").strip()
+    values_path = input("Введите путь до фала со значениями: ").strip()
+    report_path = input("Введите путь до отчета: ").strip()
 
     if not(os.path.exists(tests_path) or os.path.exists(values_path)):
         print("Неверно указаны пути.")
