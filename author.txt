@@ -1,2 +1,2 @@
-author: Pechalov Ivan
-programing language: Python
+автор: Печалов Иван Александрович
+язык программирования: Python

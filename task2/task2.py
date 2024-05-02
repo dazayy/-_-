@@ -6,18 +6,16 @@ def create_data(circle_path:str,points_path:str):
 
     def generate_data():
 
-        points = [(random.uniform(-10**38, 10**38), random.uniform(-10**38, 10**38)) for _ in range(1, 101)]
-
         with open(points_path, "w") as file:
-            for point in points:
-                file.write(f"{point[0]} {point[1]}\n")
+            for _ in range(100):
+                file.write(f"{random.uniform(-10**38, 10**38)} {random.uniform(-10**38, 10**38)}\n")
 
 
         with open(circle_path, "w") as file:
-            for _ in range(50):
+            for _ in range(100):
                 center_x = round(random.uniform(-10**38, 10**38), 2)
                 center_y = round(random.uniform(-10**38, 10**38), 2)
-                radius = round(random.uniform(10**38, 10**38), 2)
+                radius = round(random.uniform(-10**38, 10**38), 2)
                 file.write(f"{center_x} {center_y}\n{radius}\n")
 
     generate_data()
@@ -67,41 +65,34 @@ def process_data(path_circle, path_points):
     print("-"*100)
 
 
-    for i in range(len(circle_data)):
-        center_x, center_y, r = circle_data[i]
-        for j in range(len(circle_data[i])):
-            point_x, point_y = points_data[j] 
-            print(f"centerX: {center_x}\ncenterY: {center_y}\nr: {r}\npointX: {point_x}\npointY:{point_y}")
-            print(f"--------result{i+1}:\t{calculate_distance(center_x, center_y, r, point_x, point_y)}\n")
-            
 
+    if (len(points_data) == len(circle_data)):
+        N = len(points_data)
+        for i in range(N):
+            center_x, center_y, r = circle_data[i]
+            point_x, point_y = points_data[i] 
+            print(f"centerX: {center_x}\ncenterY: {center_y}\nr: {r}\npointX: {point_x}\npointY:{point_y}")
+            print(f"--------result №{i+1}:\t{calculate_distance(center_x, center_y, r, point_x, point_y)}\n")
+    else:
+        
+        for i in range(len(circle_data)):
+            center_x, center_y, r = circle_data[i]
+            for j in range(len(points_data)):
+                point_x, point_y = points_data[j] 
+                print(f"centerX: {center_x}\ncenterY: {center_y}\nr: {r}\npointX: {point_x}\npointY:{point_y}")
+                print(f"--------result №{i+1}:\t{calculate_distance(center_x, center_y, r, point_x, point_y)}\n")
 
 
 def main():
     
-    """
-    Примечание (у меня не помещается полностью вывод в КОНСОЛИ vs code)
-    Я запустил через cmd task2.py (только из папки tasks)
-    Пример:
-    Текущая дирректория: tasks
-    cmd -> python ./task2/task2.py
-    и тогда вывод показывает вычисления с самого начала
-
-    (с данными из тз такого не происходит)
-    """
-
 
     path_circle = "task2/circle_data.txt"
     path_points ="task2/points_data.txt"
 
 
     # данные из тз
-    path_circle = "task2/tests_data/circle_data.txt"
-    path_points ="task2/tests_data/points_data.txt"
-
-
-
-
+    # path_circle = "task2/tests_data/circle_data.txt"
+    # path_points ="task2/tests_data/points_data.txt"
 
     if not (os.path.exists(path_circle) or os.path.exists(path_points)):
         create_data(path_circle, path_points)

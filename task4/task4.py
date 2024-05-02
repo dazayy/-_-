@@ -8,7 +8,6 @@ def get_min_step(arr):
         step += abs(num - median)
     return int(step)
 
-
 def main():
     # path = "task4/input.txt"
 
