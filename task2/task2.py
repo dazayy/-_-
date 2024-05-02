@@ -57,12 +57,12 @@ def process_data(path_circle, path_points):
     circle_data = get_circle_data(path_circle)
     points_data = get_points_data(path_points)
 
-
-    print("-"*100)
-    print(f"circle_data:\t{circle_data}")
-    print()
-    print(f"circle_data:\t{points_data}\n")
-    print("-"*100)
+    # вывод массивов 
+    # print("-"*100)
+    # print(f"circle_data:\t{circle_data}")
+    # print()
+    # print(f"circle_data:\t{points_data}\n")
+    # print("-"*100)
 
 
 
@@ -71,7 +71,9 @@ def process_data(path_circle, path_points):
         for i in range(N):
             center_x, center_y, r = circle_data[i]
             point_x, point_y = points_data[i] 
-            print(f"centerX: {center_x}\ncenterY: {center_y}\nr: {r}\npointX: {point_x}\npointY:{point_y}")
+            
+            # вывод данных, которые учавствуюут в вычислениях
+            # print(f"centerX: {center_x}\ncenterY: {center_y}\nr: {r}\npointX: {point_x}\npointY:{point_y}")
             print(f"--------result №{i+1}:\t{calculate_distance(center_x, center_y, r, point_x, point_y)}\n")
     else:
         
@@ -79,7 +81,9 @@ def process_data(path_circle, path_points):
             center_x, center_y, r = circle_data[i]
             for j in range(len(points_data)):
                 point_x, point_y = points_data[j] 
-                print(f"centerX: {center_x}\ncenterY: {center_y}\nr: {r}\npointX: {point_x}\npointY:{point_y}")
+                
+                # вывод данных, которые учавствуюут в вычислениях
+                # print(f"centerX: {center_x}\ncenterY: {center_y}\nr: {r}\npointX: {point_x}\npointY:{point_y}")
                 print(f"--------result №{i+1}:\t{calculate_distance(center_x, center_y, r, point_x, point_y)}\n")
 
 
