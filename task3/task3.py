@@ -36,9 +36,9 @@ def task3(values_path:str, tests_path:str, report_path:str):
 
 def main():
     
-    # tests_path = "task3/tests.json"
-    # values_path = "task3/values.json"
-    # report_path = "task3/report.json"
+    # tests_path = "test_case/task3/tests.json"
+    # values_path = "test_case/task3/values.json"
+    # report_path = "test_case/task3/report.json"
 
 
     tests_path = input("Введиет путь до структуры данных: ").strip()
@@ -52,4 +52,7 @@ def main():
         print("Отчет создан")
 
 
-main()
+if __name__ == "__main__":
+    main()
+
+
