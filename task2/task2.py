@@ -90,8 +90,8 @@ def process_data(path_circle, path_points):
 def main():
     
 
-    path_circle = "task2/circle_data.txt"
-    path_points ="task2/points_data.txt"
+    path_circle = "test_case/task2/circle_data.txt"
+    path_points ="test_case/task2/points_data.txt"
 
 
     # данные из тз
@@ -103,4 +103,7 @@ def main():
     process_data(path_circle, path_points)
 
 
-main()
+if __name__ == "__main__":
+    main()
+
+
