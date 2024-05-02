@@ -21,4 +21,5 @@ def main():
             print("Минимальное кол-во ходов:", get_min_step(nums))
 
 
-main()
+if __name__ == "__main__":
+    main()
